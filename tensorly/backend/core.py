@@ -30,12 +30,12 @@ backend_basic_math = [
     "sin",
     "cos",
     "tan",
-    "arctanh",
-    "arccosh",
-    "arcsinh",
-    "arctan",
-    "arccos",
-    "arcsin",
+    "atanh",
+    "acosh",
+    "asinh",
+    "atan",
+    "acos",
+    "asin",
 ]
 backend_array = [
     "einsum",
@@ -1160,31 +1160,31 @@ class Backend(object):
         raise NotImplementedError
 
     @staticmethod
-    def arcsin(x):
-        """Return the arcsin of x."""
+    def asin(x):
+        """Return the asin of x."""
         raise NotImplementedError
 
     @staticmethod
-    def arccos(x):
-        """Return the arccos of x."""
+    def acos(x):
+        """Return the acos of x."""
         raise NotImplementedError
 
     @staticmethod
-    def arctan(x):
-        """Return the arctan of x."""
+    def atan(x):
+        """Return the atan of x."""
         raise NotImplementedError
 
     def asin(self, x):
-        """Return the arcsin of x."""
-        return self.arcsin(x)
+        """Return the asin of x."""
+        return self.asin(x)
 
     def acos(self, x):
-        """Return the arccos of x."""
-        return self.arccos(x)
+        """Return the acos of x."""
+        return self.acos(x)
 
     def atan(self, x):
-        """Return the arctan of x."""
-        return self.arctan(x)
+        """Return the atan of x."""
+        return self.atan(x)
 
     @staticmethod
     def sinh(x):
@@ -1202,31 +1202,31 @@ class Backend(object):
         raise NotImplementedError
 
     @staticmethod
-    def arcsinh(x):
-        """Return the arcsinh of x."""
+    def asinh(x):
+        """Return the asinh of x."""
         raise NotImplementedError
 
     @staticmethod
-    def arccosh(x):
-        """Return the arccosh of x."""
+    def acosh(x):
+        """Return the acosh of x."""
         raise NotImplementedError
 
     @staticmethod
-    def arctanh(x):
-        """Return the arctanh of x."""
+    def atanh(x):
+        """Return the atanh of x."""
         raise NotImplementedError
 
     def asinh(self, x):
-        """Return the arcsinh of x."""
-        return self.arcsinh(x)
+        """Return the asinh of x."""
+        return self.asinh(x)
 
     def acosh(self, x):
-        """Return the arccosh of x."""
-        return self.arccosh(x)
+        """Return the acosh of x."""
+        return self.acosh(x)
 
     def atanh(self, x):
-        """Return the arctanh of x."""
-        return self.arctanh(x)
+        """Return the atanh of x."""
+        return self.atanh(x)
 
     def partial_svd(self, *args, **kwargs):
         msg = (

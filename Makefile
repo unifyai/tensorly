@@ -20,6 +20,7 @@ test-all:
 	TENSORLY_BACKEND='pytorch' pytest -v tensorly
 	TENSORLY_BACKEND='mxnet' pytest -v tensorly
 	TENSORLY_BACKEND='jax' pytest -v tensorly
+	TENSORLY_BACKEND='ivy' pytest -v tensorly
 	TENSORLY_BACKEND='tensorflow' pytest -v tensorly
 
 test-coverage:

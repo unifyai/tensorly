@@ -100,7 +100,7 @@ You can change the backend to perform computation with a different framework. By
 
 .. code:: python
 
-   tl.set_backend('pytorch') # Or 'mxnet', 'numpy', 'tensorflow', 'cupy' or 'jax'
+   tl.set_backend('pytorch') # Or 'mxnet', 'numpy', 'tensorflow', 'ivy', 'cupy' or 'jax'
    tensor = tl.tensor(np.arange(24).reshape((3, 4, 2)), device='cuda:0')
    type(tensor) # torch.Tensor
    
