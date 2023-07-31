@@ -89,15 +89,15 @@ class BackendManager(types.ModuleType):
         "asin",
         "acos",
         "atan",
-        "arcsin",
-        "arccos",
-        "arctan",
+        "asin",
+        "acos",
+        "atan",
         "sinh",
         "cosh",
         "tanh",
-        "arcsinh",
-        "arccosh",
-        "arctanh",
+        "asinh",
+        "acosh",
+        "atanh",
         "asinh",
         "acosh",
         "atanh",
@@ -118,8 +118,16 @@ class BackendManager(types.ModuleType):
         "index",
         "backend_name",
     ]
-    available_backend_names = ["numpy", "mxnet", "pytorch", "tensorflow", "cupy", "jax"]
-    _default_backend = "numpy"
+    available_backend_names = [
+        "numpy",
+        "ivy",
+        "mxnet",
+        "pytorch",
+        "tensorflow",
+        "cupy",
+        "jax",
+    ]
+    _default_backend = "ivy"
     _loaded_backends = dict()
     _backend = None
     _THREAD_LOCAL_DATA = threading.local()

@@ -6,7 +6,7 @@ TensorLy's backend system
 .. note::
 
    In short, you can write your code using TensorLy and you can transparently combine it and execute with any of the backends. 
-   Currently we support NumPy PyTorch, MXNet, JAX, TensorFlow and CuPy as backends.
+   Currently we support NumPy PyTorch, MXNet, JAX, ivy, TensorFlow and CuPy as backends.
 
 
 Backend?
