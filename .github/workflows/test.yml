@@ -48,7 +48,7 @@ jobs:
           pip install tensorflow;
         elif [[ "${{matrix.BACKEND}}" == "ivy" ]]; then
           echo "Installing ivy";
-          pip install ivy-core;
+          pip install ivy;
         elif [[ "${{matrix.BACKEND}}" == "mxnet" ]]; then
           echo "Installing MXNet";
           sudo apt install gfortran;
