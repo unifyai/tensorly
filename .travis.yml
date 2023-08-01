@@ -53,7 +53,7 @@ install:
       elif [[ "$BACKEND" == "mxnet" ]]; then
         pip install mxnet;
       elif [[ "$BACKEND" == "ivy" ]]; then
-        pip install ivy-core;
+        pip install ivy;
       elif [[ "$BACKEND" == "jax" ]]; then
         pip install jax jaxlib;
       fi
