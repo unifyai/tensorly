@@ -31,7 +31,7 @@ mypy-extensions==1.0.0
 networkx==3.1
 numpy==1.24.3
 nvidia-ml-py==11.495.46
-packaging==23.1
+packaging==21.3
 parso==0.8.3
 pathspec==0.11.1
 pexpect==4.8.0
