@@ -19,7 +19,7 @@ google-auth==2.20.0
 idna==3.4
 iniconfig==2.0.0
 ipython==8.14.0
-ivy-core @ git+https://github.com/unifyai/ivy.git@6e4e97c30a44fe791e7dbe6cd74390154cd8bf3e
+ivy @ git+https://github.com/unifyai/ivy.git@bffe651f849f21f91668f49bbe4f35374f295894
 jedi==0.18.2
 Jinja2==3.1.2
 jsonpickle==3.0.1
@@ -62,3 +62,4 @@ tomli==2.0.1
 traitlets==5.9.0
 urllib3==1.26.16
 wcwidth==0.2.6
+
