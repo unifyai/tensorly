@@ -1212,9 +1212,9 @@ class Backend(object):
         raise NotImplementedError
 
     @staticmethod
-    def arctanh(self, x):
+    def arctanh(x):
         """Return the arctanh of x."""
-        return self.atanh(x)
+        raise NotImplementedError
 
     def asinh(self, x):
         """Return the arcsinh of x."""
