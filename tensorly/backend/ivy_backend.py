@@ -244,6 +244,10 @@ class ivyBackend(Backend, backend_name="ivy"):
         else:
             return ivy.flip(tensor, axis=axis)
 
+    @staticmethod
+    def arctanh(x):
+        return ivy.atanh(x)
+
 
 for name in (
     backend_types
