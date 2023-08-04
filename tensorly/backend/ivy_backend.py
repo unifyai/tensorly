@@ -1,5 +1,5 @@
 import ivy
-from ivy.functional.frontends.numpy.linalg.norms_and_other_numbers import matrix_rank
+
 
 from .core import (
     Backend,
@@ -8,7 +8,6 @@ from .core import (
     backend_array,
 )
 
-import numpy as np
 
 
 class ivyBackend(Backend, backend_name="ivy"):
@@ -25,8 +24,6 @@ class ivyBackend(Backend, backend_name="ivy"):
         solution = ivy.matmul(
             ivy.pinv(a, rtol=1e-15).astype(ivy.float64), b.astype(ivy.float64)
         )
-        svd = ivy.svd(a, compute_uv=False)
-        rank = matrix_rank(a).astype(ivy.int32)
         residuals = ivy.sum((b - ivy.matmul(a, solution)) ** 2).astype(ivy.float64)
         return (solution, residuals)
 
