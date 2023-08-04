@@ -48,7 +48,7 @@ class ErrorTracker:
 # mxnet does not support complex numbers. tensorflow has issues with type promotion that would require more code changes
 @pytest.mark.parametrize(
     "complex",
-    [False] if tl.get_backend() in ["mxnet", "tensorflow", "ivy"] else [True, False],
+    [False] if tl.get_backend() in ["mxnet", "tensorflow"] else [True, False],
 )
 def test_parafac(
     linesearch,
