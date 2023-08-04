@@ -59,8 +59,9 @@ class ivyBackend(Backend, backend_name="ivy"):
     def to_numpy(tensor):
         return ivy.to_numpy(tensor)
 
-    def transpose(self, tensor, axes=None):
-        axes = axes or list(range(self.ndim(tensor)))[::-1]
+    @staticmethod
+    def transpose(tensor, axes=None):
+        axes = axes or list(range(ivy.get_num_dims(tensor)))[::-1]
         return ivy.permute_dims(tensor, axes)
 
     @staticmethod
