@@ -43,7 +43,7 @@ jobs:
           echo "Installing TensorFlow";
           pip install tensorflow;
         elif [[ "${{matrix.BACKEND}}" == "ivy" ]]; then
-          echo "Installing ivy";
+          echo "Installing Ivy";
           pip install ivy;
         elif [[ "${{matrix.BACKEND}}" == "mxnet" ]]; then
           echo "Installing MXNet";
