@@ -178,7 +178,7 @@ class ivyBackend(Backend, backend_name="ivy"):
         return ivy.ones(shape, dtype=dtype)
 
     @staticmethod
-    def zeros(shape, dtype=float):
+    def zeros(shape, dtype=float32):
         return ivy.zeros(shape, dtype=dtype)
 
     @staticmethod
@@ -186,7 +186,7 @@ class ivyBackend(Backend, backend_name="ivy"):
         return ivy.zeros_like(a, dtype=dtype)
 
     @staticmethod
-    def eye(n, m=None, k=0, dtype="float"):
+    def eye(n, m=None, k=0, dtype="float32"):
         return ivy.eye(n, m, k=k, dtype=dtype)
 
     @staticmethod
