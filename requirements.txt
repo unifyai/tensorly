@@ -3,4 +3,4 @@ scipy
 pytest
 pytest-cov
 python_version >= "3.6"
-ivy @ git+https://github.com/unifyai/ivy.git@bffe651f849f21f91668f49bbe4f35374f295894
+ivy
