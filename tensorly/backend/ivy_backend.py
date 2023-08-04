@@ -1,4 +1,13 @@
-import ivy
+try:
+    import ivy
+except ImportError as error:
+    message = (
+        "Impossible to import Ivy.\n"
+        "To use TensorLy with the Ivy backend, "
+        "you must first install Ivy!"
+    )
+    raise ImportError(message) from error
+
 
 
 from .core import (
