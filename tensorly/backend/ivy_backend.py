@@ -50,7 +50,7 @@ class ivyBackend(Backend, backend_name="ivy"):
         return ivy.copy_array(tensor, to_ivy_array=False)
 
     @staticmethod
-    def reshape(tensor, newshape, order="c"):
+    def reshape(tensor, newshape, order="C"):
         return ivy.reshape(tensor, shape=newshape, order=order)
 
     # transpose
@@ -92,8 +92,8 @@ class ivyBackend(Backend, backend_name="ivy"):
         return ivy.sign(tensor)
 
     @staticmethod
-    def abs(tensor, where=True):
-        return ivy.abs(tensor, where=where)
+    def abs(tensor):
+        return ivy.abs(tensor)
 
     @staticmethod
     def mean(tensor, axis=None):
@@ -179,7 +179,7 @@ class ivyBackend(Backend, backend_name="ivy"):
         return ivy.ones(shape, dtype=dtype)
 
     @staticmethod
-    def zeros(shape, dtype=float32):
+    def zeros(shape, dtype=float):
         return ivy.zeros(shape, dtype=dtype)
 
     @staticmethod
@@ -187,7 +187,7 @@ class ivyBackend(Backend, backend_name="ivy"):
         return ivy.zeros_like(a, dtype=dtype)
 
     @staticmethod
-    def eye(n, m=None, k=0, dtype="float32"):
+    def eye(n, m=None, k=0, dtype="float"):
         return ivy.eye(n, m, k=k, dtype=dtype)
 
     @staticmethod
@@ -255,12 +255,37 @@ class ivyBackend(Backend, backend_name="ivy"):
     def arctanh(x):
         return ivy.atanh(x)
 
+    @staticmethod
+    def arcsinh(x):
+        return ivy.asinh(x)
+
+    @staticmethod
+    def arccosh(x):
+        return ivy.acosh(x)
+
+    @staticmethod
+    def arctan(x):
+        return ivy.atan(x)
+
+    @staticmethod
+    def arcsin(x):
+        return ivy.asin(x)
+
+    @staticmethod
+    def arccos(x):
+        return ivy.acos(x)
+
 
 for name in (
     backend_types
-    + backend_basic_math
     + backend_array
     + [
+        "atanh",
+        "asinh",
+        "acosh",
+        "atan",
+        "asin",
+        "acos",
         "nan",
         "trace",
     ]
