@@ -280,12 +280,6 @@ for name in (
     backend_types
     + backend_array
     + [
-        "atanh",
-        "asinh",
-        "acosh",
-        "atan",
-        "asin",
-        "acos",
         "nan",
         "trace",
     ]
