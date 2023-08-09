@@ -13,7 +13,6 @@ except ImportError as error:
 from .core import (
     Backend,
     backend_types,
-    backend_basic_math,
     backend_array,
 )
 
@@ -51,7 +50,7 @@ class ivyBackend(Backend, backend_name="ivy"):
 
 
 
-    # transpose
+
 
     @staticmethod
     def to_numpy(tensor):
@@ -82,7 +81,6 @@ class ivyBackend(Backend, backend_name="ivy"):
 
 
 
-    # complex (sign)
     @staticmethod
     def sign(tensor):
         return ivy.sign(tensor)
@@ -136,7 +134,7 @@ class ivyBackend(Backend, backend_name="ivy"):
     def ndim(tensor):
         return ivy.get_num_dims(tensor)
 
-    # Algebraic Operations
+
 
     @staticmethod
     def dot(a, b):
@@ -165,16 +163,6 @@ class ivyBackend(Backend, backend_name="ivy"):
     @staticmethod
     def qr(a, mode="reduced"):
         return ivy.qr(a, mode=mode)
-
-    # Array Creation
-
-
-
-
-
-
-
-
 
     @staticmethod
     def diag(v, k=0):
