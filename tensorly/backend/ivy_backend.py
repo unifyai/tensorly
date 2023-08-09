@@ -41,8 +41,8 @@ class ivyBackend(Backend, backend_name="ivy"):
         return ivy.clip(tensor, a_min, a_max)
 
     @staticmethod
-    def concatenate(tensors, axis=0):
-        return ivy.concat(tensors, axis=axis)
+    def concatenate(tensors, axis=0, out=None):
+        return ivy.concat(tensors, axis=axis, out=out)
 
     @staticmethod
     def copy(tensor, order="k", subok=False):
@@ -62,10 +62,10 @@ class ivyBackend(Backend, backend_name="ivy"):
         return ivy.permute_dims(tensor, axes)
 
     @staticmethod
-    def sum(tensor, axis=None, dtype=None, keepdims=False):
-        return ivy.sum(tensor, axis=axis, dtype=dtype, keepdims=keepdims)
+    def sum(tensor, axis=None, dtype=None, keepdims=False, out=None):
+        return ivy.sum(tensor, axis=axis, dtype=dtype, keepdims=keepdims, out=out)
 
-    # complex(sqrt)
+
 
     @staticmethod
     def stack(arrays, axis=0):
@@ -82,12 +82,12 @@ class ivyBackend(Backend, backend_name="ivy"):
 
 
     @staticmethod
-    def sign(tensor):
-        return ivy.sign(tensor)
+    def sign(tensor, out=None):
+        return ivy.sign(tensor, out=out)
 
     @staticmethod
-    def abs(tensor):
-        return ivy.abs(tensor)
+    def abs(tensor, out=None):
+        return ivy.abs(tensor, out=out)
 
     @staticmethod
     def mean(tensor, axis=None):
@@ -99,24 +99,24 @@ class ivyBackend(Backend, backend_name="ivy"):
 
 
     @staticmethod
-    def argmin(tensor, axis=None, keepdims=False):
-        return ivy.argmin(tensor, axis=axis, keepdims=keepdims)
+    def argmin(tensor, axis=None, keepdims=False, out=None):
+        return ivy.argmin(tensor, axis=axis, keepdims=keepdims, out=out)
 
     @staticmethod
-    def argmax(tensor, axis=None, keepdims=False):
-        return ivy.argmax(tensor, axis=axis, keepdims=keepdims)
+    def argmax(tensor, axis=None, keepdims=False, out=None):
+        return ivy.argmax(tensor, axis=axis, keepdims=keepdims, out=out)
 
     @staticmethod
-    def max(tensor, axis=None, keepdims=False):
-        return ivy.max(tensor, axis=axis, keepdims=keepdims)
+    def max(tensor, axis=None, keepdims=False, out=None):
+        return ivy.max(tensor, axis=axis, keepdims=keepdims, out=out)
 
     @staticmethod
-    def min(tensor, axis=None, keepdims=False):
-        return ivy.min(tensor, axis=axis, keepdims=keepdims)
+    def min(tensor, axis=None, keepdims=False, out=None):
+        return ivy.min(tensor, axis=axis, keepdims=keepdims, out=out)
 
     @staticmethod
-    def conj(tensor):
-        return ivy.conj(tensor)
+    def conj(tensor, out=None):
+        return ivy.conj(tensor, out=out)
 
     @staticmethod
     def arange(start=0, stop=None, step=1.0, dtype=None):
