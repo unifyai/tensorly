@@ -90,11 +90,11 @@ class ivyBackend(Backend, backend_name="ivy"):
         return ivy.abs(tensor, out=out)
 
     @staticmethod
-    def mean(tensor, axis=None):
+    def mean(tensor, axis=None, keepdims=False):
         if axis is None:
-            return ivy.mean(tensor)
+            return ivy.mean(tensor, keepdims=keepdims)
         else:
-            return ivy.mean(tensor, axis=axis)
+            return ivy.mean(tensor, axis=axis, keepdims=keepdims)
 
 
 
