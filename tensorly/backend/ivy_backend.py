@@ -49,9 +49,7 @@ class ivyBackend(Backend, backend_name="ivy"):
     def copy(tensor, order="k", subok=False):
         return ivy.copy_array(tensor, to_ivy_array=False)
 
-    @staticmethod
-    def reshape(tensor, newshape, order="C"):
-        return ivy.reshape(tensor, shape=newshape, order=order)
+
 
     # transpose
 
@@ -82,9 +80,7 @@ class ivyBackend(Backend, backend_name="ivy"):
 
         return ivy.sort(tensor, axis=axis, descending=False, stable=True)
 
-    @staticmethod
-    def prod(tensor, axis=None, dtype=None, keepdims=False):
-        return ivy.prod(tensor, axis=axis, dtype=dtype, keepdims=keepdims)
+
 
     # complex (sign)
     @staticmethod
@@ -102,9 +98,7 @@ class ivyBackend(Backend, backend_name="ivy"):
         else:
             return ivy.mean(tensor, axis=axis)
 
-    @staticmethod
-    def all(tensor, axis=None, keepdims=False):
-        return ivy.all(tensor, axis=axis, keepdims=keepdims)
+
 
     @staticmethod
     def argmin(tensor, axis=None, keepdims=False):
@@ -174,21 +168,13 @@ class ivyBackend(Backend, backend_name="ivy"):
 
     # Array Creation
 
-    @staticmethod
-    def ones(shape, dtype=None):
-        return ivy.ones(shape, dtype=dtype)
 
-    @staticmethod
-    def zeros(shape, dtype=float):
-        return ivy.zeros(shape, dtype=dtype)
 
-    @staticmethod
-    def zeros_like(a, dtype=None):
-        return ivy.zeros_like(a, dtype=dtype)
 
-    @staticmethod
-    def eye(n, m=None, k=0, dtype="float"):
-        return ivy.eye(n, m, k=k, dtype=dtype)
+
+
+
+
 
     @staticmethod
     def diag(v, k=0):
