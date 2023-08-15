@@ -226,7 +226,7 @@ class ivyBackend(Backend, backend_name="ivy"):
 
     @staticmethod
     def arccos(x):
-        return ivy.coun
+        return ivy.acos(x)
 
 
 for name in (
