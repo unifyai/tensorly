@@ -11,7 +11,6 @@ except ImportError as error:
 from .core import (
     Backend,
     backend_types,
-    backend_array,
 )
 
 
