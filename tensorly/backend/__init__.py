@@ -139,7 +139,7 @@ class BackendManager(types.ModuleType):
         "cupy",
         "jax",
     ]
-    _default_backend = "ivy"
+    _default_backend = "numpy"
     _loaded_backends = dict()
     _backend = None
     _THREAD_LOCAL_DATA = threading.local()
