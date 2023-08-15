@@ -2,5 +2,6 @@ numpy
 scipy
 pytest
 pytest-cov
+pytest-randomly
 python_version >= "3.6"
 ivy
