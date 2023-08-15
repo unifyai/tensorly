@@ -8,14 +8,11 @@ except ImportError as error:
     )
     raise ImportError(message) from error
 
-
-
 from .core import (
     Backend,
     backend_types,
     backend_array,
 )
-
 
 
 class ivyBackend(Backend, backend_name="ivy"):
@@ -48,10 +45,6 @@ class ivyBackend(Backend, backend_name="ivy"):
     def copy(tensor, order="k", subok=False):
         return ivy.copy_array(tensor, to_ivy_array=False)
 
-
-
-
-
     @staticmethod
     def to_numpy(tensor):
         return ivy.to_numpy(tensor)
@@ -65,8 +58,6 @@ class ivyBackend(Backend, backend_name="ivy"):
     def sum(tensor, axis=None, dtype=None, keepdims=False, out=None):
         return ivy.sum(tensor, axis=axis, dtype=dtype, keepdims=keepdims, out=out)
 
-
-
     @staticmethod
     def stack(arrays, axis=0):
         return ivy.stack(arrays, axis=axis)
@@ -78,8 +69,6 @@ class ivyBackend(Backend, backend_name="ivy"):
             axis = -1
 
         return ivy.sort(tensor, axis=axis, descending=False, stable=True)
-
-
 
     @staticmethod
     def sign(tensor, out=None):
@@ -95,8 +84,6 @@ class ivyBackend(Backend, backend_name="ivy"):
             return ivy.mean(tensor, keepdims=keepdims)
         else:
             return ivy.mean(tensor, axis=axis, keepdims=keepdims)
-
-
 
     @staticmethod
     def argmin(tensor, axis=None, keepdims=False, out=None):
@@ -133,8 +120,6 @@ class ivyBackend(Backend, backend_name="ivy"):
     @staticmethod
     def ndim(tensor):
         return ivy.get_num_dims(tensor)
-
-
 
     @staticmethod
     def dot(a, b):
@@ -180,9 +165,6 @@ class ivyBackend(Backend, backend_name="ivy"):
     def argsort(input, axis=None):
         return ivy.argsort(input, axis=axis, descending=False, stable=True)
 
-    @staticmethod
-    def log(x):
-        return ivy.log(x)
 
     @staticmethod
     def log2(x):
@@ -192,9 +174,6 @@ class ivyBackend(Backend, backend_name="ivy"):
     def finfo(x):
         return ivy.finfo(x)
 
-    @staticmethod
-    def log2(x):
-        return ivy.log2(x)
 
     @staticmethod
     def tensordot(a, b, axes=2):
@@ -247,19 +226,39 @@ class ivyBackend(Backend, backend_name="ivy"):
 
     @staticmethod
     def arccos(x):
-        return ivy.acos(x)
+        return ivy.coun
 
 
 for name in (
-    backend_types
-    + backend_array
-    + [
-        "nan",
-        "trace",
-    ]
+        backend_types
+        + [
+            "ones",
+            "einsum",
+            "any",
+            "where",
+            "cumsum",
+            "count_nonzero",
+            "exp",
+            "log",
+            "tanh",
+            "cosh",
+            "sinh",
+            "sin",
+            "cos",
+            "tan",
+            "zeros",
+            "prod",
+            "all",
+            "reshape",
+            "eye",
+            "sqrt",
+            "abs",
+            "zeros_like",
+            "nan",
+            "trace",
+        ]
 ):
     ivyBackend.register_method(name, getattr(ivy, name))
-
 
 for name in ["svd"]:
     ivyBackend.register_method(name, getattr(ivy.linear_algebra, name))
