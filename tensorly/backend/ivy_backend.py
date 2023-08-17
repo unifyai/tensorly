@@ -29,7 +29,12 @@ class ivyBackend(Backend, backend_name="ivy"):
         solution = ivy.matmul(
             ivy.pinv(a, rtol=1e-15).astype(ivy.float64), b.astype(ivy.float64)
         )
-        residuals = ivy.sum((b - ivy.matmul(a, solution)) ** 2).astype(ivy.float64)
+        rank = ivy.matrix_rank(a).astype(ivy.int32)
+        residuals = (
+            ivy.sum((b - ivy.matmul(a, solution)) ** 2, axis=0).astype(ivy.float64)
+            if rank != 2
+            else ivy.array([])
+        )
         return (solution, residuals)
 
     # Array Manipulation
