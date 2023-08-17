@@ -74,9 +74,6 @@ class ivyBackend(Backend, backend_name="ivy"):
     def sign(tensor, out=None):
         return ivy.sign(tensor, out=out)
 
-    @staticmethod
-    def abs(tensor, out=None):
-        return ivy.abs(tensor, out=out)
 
     @staticmethod
     def mean(tensor, axis=None, keepdims=False):
@@ -180,17 +177,17 @@ class ivyBackend(Backend, backend_name="ivy"):
         return ivy.tensordot(a, b, axes=axes)
 
     @staticmethod
-    def logsumexp(input, dim, keepdim=False, *, out=None):
-        c = ivy.max(input, axis=dim, keepdims=True)
+    def logsumexp(input, axis=0, keepdim=False, *, out=None):
+        c = ivy.max(input, axis=axis, keepdims=True)
         if ivy.get_num_dims(c) > 0:
             c = ivy.where(ivy.isinf(c), ivy.zeros_like(c), c)
         elif not ivy.isinf(c):
             c = 0
         exponential = ivy.exp(input - c)
-        sum = ivy.sum(exponential, axis=dim, keepdims=keepdim)
+        sum = ivy.sum(exponential, axis=axis, keepdims=keepdim)
         ret = ivy.log(sum)
         if not keepdim:
-            c = ivy.squeeze(c, axis=dim)
+            c = ivy.squeeze(c, axis=axis)
         ret = ivy.add(ret, c, out=out)
         return ret
 
@@ -236,6 +233,7 @@ for name in (
             "einsum",
             "any",
             "where",
+            "maximum",
             "cumsum",
             "count_nonzero",
             "exp",
